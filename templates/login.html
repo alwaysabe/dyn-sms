@@ -1,0 +1,92 @@
+<style type="text/css">
+  .message { color: #9294a3; font-size: 12px; font-family: sans-serif;}
+  td{
+    font-size: 12px;
+    font-weight: bold;
+    color: #333333;
+    font-family: sans-serif;
+    padding: 4px;
+  }
+  div.white{
+    background-color: #FFFFFF;
+    border-color: #D0C4D0;
+    border-style: solid;
+    border-width: 1px;
+    border-bottom-width: 0px;
+    border-top-width: 0px;
+  }
+  div.login{
+    padding: 16px;
+    padding-right: 0px;
+    background-color: #FFFFFF;
+    font-weight:bold;
+    padding-top:7px;
+  }
+  div.logo{
+    background-color: #102038;
+    color: white;
+    text-align: center;
+    padding-bottom: 5px;
+  }
+  h1 { margin: 0px; font-size:26px; font-weight: normal; font-family:Arial,Helvetica,sans-serif; font-variant:small-caps; color: white; 
+       padding: 16px; padding-top: 8px; padding-bottom: 4px;}
+  div.content{
+    background-color: #E5E5E5;
+    margin: 0 auto;
+    width: 340px;
+  }
+  div.black{
+    padding: 4px; padding-top: 8px; padding-left: 8px; 
+    text-align: left;
+    background-color: #424242;
+    color: white;
+  }
+  div.footer{
+    color: #D0C4D0;
+    font-family: sans-serif;
+    font-size: 11px; text-align: center;
+    padding: 4px; margin: 0px;
+  }
+  body{
+    background-color: #E5E5E5;
+  }
+  h2 {
+    display:inline;
+    font-family:helvetica,arial,sans-serif;
+    font-size:14px;
+    margin-left:10px;
+  }
+</style>
+
+<br />
+<div class="content" align='center'>
+  <br /><br />
+  <div class ="logo">
+    <h1>ZULO DynSMS</h1>
+    <div class="footer">
+      MobME Wireless
+    </div>
+
+  </div>
+  <div style="background-color: #E5E5E5; "><br /></div>
+  <div class="white">
+    <div class="black">
+     <h2>Login</h2>
+    </div>
+    <div class="login">
+      <form action="/login" method="post">
+
+        <table>
+          <tr>
+            <td>Username:</td><td><input type="text" name="username" id="username"/></td>
+          </tr><tr>
+            <td>Password:</td><td><input type="password" name="password" id="password"/></td>
+          </tr><tr>
+            <td><br/><input type="submit" value="Login" id="login-button"/></td>
+          </tr>
+
+        </table>
+      </form>
+    </div>
+  </div>
+</div>

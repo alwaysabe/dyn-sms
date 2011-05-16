@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Zulo DynSMS</title>
+<link rel="Stylesheet" href="/static/screen.css" type="text/css" media="screen" />
+<link rel="Stylesheet" href="/static/dynsms.css" type="text/css" media="screen" />
+
+
+<body class="home2" onload="setupZoom()">
+
+  
+  <div class="header">
+    <div class="container">
+      <div class="links"><table><tr><td><a href="/home">Home</a></td><td> <a href="/upload">Upload</a></td><td> <a href="/report">Reports</a></td><td>
+$if context.username == 'Nobody':
+  <a href="/login">Log in</a>
+$else:
+  <a href="/logout">Logout</a>
+
+</td></div><td>$context.username</td></tr></table>
+
+    </div>
+  </div>
+
+  <div class="top">
+    <div class="container">
+      <div class="pitch">
+        <div style="padding: 0; width: 450px;">
+	  <table width="600"><tr><td>
+          <h1>Send Customer specific messages.</h1>
+          <h2>Pattern matched verbiages.</h2>
+          <h3>ads</h3></td><td>
+	  <img src="/static/images/upload1.png" width="600" height="400" alt="See Plans and Pricing" class="button" align="right"></td></tr></table>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+  <div class="container">
+  </div>
+  <div class="container">
+  </div>
+  
+  <div id="footer">
+  
+  <div class="container">
+
+
+  </div>  
+</div>
+</body>
+</html>

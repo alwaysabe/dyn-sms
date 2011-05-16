@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Zulo DynSMS</title>
+<link rel="Stylesheet" href="/static/screen.css" type="text/css" media="screen" />
+<link rel="Stylesheet" href="/static/dynsms.css" type="text/css" media="screen" />
+<script type="text/javascript" src="/static/calendar.js"></script>
+
+ <script type="text/javascript">
+  function window_onload()
+  {
+   
+          if (typeof(calendar_window_onload) != 'undefined')
+    calendar_window_onload();
+          if (typeof(page_window_onload) != 'undefined')
+    page_window_onload();
+  }
+
+function limitText(limitField, limitCount, limitNum) {
+	if (limitField.value.length > limitNum) {
+		limitField.value = limitField.value.substring(0, limitNum);
+	} else {
+		limitCount.value = limitNum - limitField.value.length;
+	}
+}
+function countText(limitField, limitCount, limitNum) {
+        if (limitField.value.length > limitNum) {
+                limitField.value = limitField.value.substring(0, limitNum);
+        } else {
+                limitCount.value = limitField.value.length;
+        }
+
+}
+</script>
+
+
+<script type='text/javascript'>
+function page_window_onload() {
+    calendar_window_onload();
+}
+</script>
+
+</head>
+<body class="home2" onload="window_onload()">
+
+  <div class="header">
+    <div class="container">
+      <div class="links"><table><tr><td><a href="/home">Home</a></td><td> <a href="/upload">Upload</a></td><td> <a href="/report">Reports</a></td><td>
+$if context.username == 'Nobody':
+  <a href="/login">Log in</a>
+$else:
+  <a href="/logout">Logout</a>
+  
+</td></div><td>$context.username</td></tr></table>
+
+    </div>
+  </div>
+
+$if context.logged_in:
+  <div class="container">
+   <div class="random">
+      <h2>  </h2>
+   </div>
+    <div class="press">
+      <div class="login" align="center">
+        <form name="bulk" method="POST" enctype="multipart/form-data" action="">
+        <table cellspacing='2'>
+	  <br>
+          <tr><td>Schedule from </td><td>
+              
+              <input name="postfromdate" class="dateinput" type="text" value="" /><a href='javascript: void(0);' onmouseover='if (timeoutId) clearTimeout(timeoutId);window.status="Show Calendar";return true;' onmouseout='if (timeoutDelay) calendarTimeout();window.status="";' onclick='g_Calendar.show(event,"bulk.postfromdate", false, "yyyy-mm-dd", new Date()); return false;'><img src="/static/images/calendar.png" name="imgCalendar" width="16" height="16" border="0" alt="" ></a>
+	      <input name="postfromtime" class="timeinput" type="text" value="02:30:00" /></td>
+              
+         </tr>
+         <tr>
+            <td>Schedule to</td>
+            <td>
+              <input name="posttodate" class="dateinput" type="text" value="" /><a href='javascript: void(0);' onmouseover='if (timeoutId) clearTimeout(timeoutId);window.status="Show Calendar";return true;' onmouseout='if (timeoutDelay) calendarTimeout();window.status="";' onclick='g_Calendar.show(event,"bulk.posttodate", false, "yyyy-mm-dd", new Date()); return false;'><img src="/static/images/calendar.png" name="imgCalendar" width="16" height="16" border="0" alt="" align = "center"></a>
+              <input name="posttotime" class="timeinput" type="text" value="20:00:00" />
+
+            </td>
+        </tr>
+
+            <tr><td>Sender Id: </td><td><input name="senderid" type="text" onKeyDown="limitText(this.form.senderid,this.form.countdown,11);" onKeyUp="limitText(this.form.senderid,this.form.countdown,11);" maxlength="11"></td></tr>
+            <tr><td>Verbiage: </td><td><TEXTAREA NAME="verbiage" COLS=60 ROWS=4 onKeyDown="countText(this.form.verbiage,this.form.countdown,1000);" onKeyUp="countText(this.form.verbiage,this.form.countdown,1000);"></TEXTAREA><font size=1>&nbsp; &nbsp; &nbsp; You have <input readonly type="text" name="countdown" size="1" value="160"> characters left.</font></td></tr>
+            <tr><td>Base: </td><td><input type="file" name="myfile" /><font size=2>&nbsp;&nbsp;Upload csv file with header msisdn, &lt;value1&gt;, &lt;value2&gt;, etc</font></td></tr>
+            <tr><td></td><td><input type="submit" /></td></tr>
+        </table>
+        </form>
+      </div>
+    </div>
+
+  </div>
+  <div class="container">
+  </div>
+</body>
+</html>
